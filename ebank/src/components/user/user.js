@@ -1,6 +1,8 @@
 export default {
   name:"user",
   data(){
-    return {}
+    return {
+    	
+    }
   }
 }
