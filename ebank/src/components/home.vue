@@ -1,0 +1,417 @@
+<template>
+	<div class="home">
+		<header>
+			<div>
+				<a href="">搜索</a>
+				<h1>全国概览</h1>
+			</div>
+		</header>
+		<div class="content">
+			<div class="count">
+				<ul class="circle">
+					<li>
+						<div class="box">
+							<div>
+								街区
+								<span>8</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="box">
+							<div>
+								商圈
+								<span>35</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="other">
+				<div class="total">
+					<span>总交易</span>
+					<div class="num">301</div>
+				</div>
+				<div class="totalList">
+					<div>
+						<span class="xx">线下</span>
+						<div class="num">30182</div>
+					</div>
+					<div>
+						<span class="ewm">二维码</span>
+						<div class="num">30182</div>
+					</div>
+					<div>
+						<span class="nfc">NFC</span>
+						<div class="num">30182</div>
+					</div>
+				</div>
+			</div>
+			<div class="statistics">
+				<div class="zx">
+					<div class="title">
+						<h2>热门商圈</h2>
+						<a href="">查看更多</a>
+					</div>
+					<ul>
+						<li v-for="item in 2">
+							<a href="">
+								<div class="lb">
+									<div>南京西路</div>
+								</div>
+								<div class="num">
+									<div>
+										交易笔数
+										<span>312</span>
+									</div>
+									<div>
+										总交易金额
+										<span>￥0.00</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="branch">
+					<div class="title">
+						<h2>热门分公司</h2>
+						<a href="">查看更多</a>
+					</div>
+					<ul>
+						<li v-for="item in 4">
+							<a href="">
+								<div class="t">乌鲁木齐</div>
+								<div class="c">
+									<div>
+										街道数
+										<span>17</span>
+									</div>
+									<div>
+										商圈数
+										<span>45</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="zx seller">
+					<div class="title">
+						<h2>热门商户</h2>
+						<a href="">查看更多</a>
+					</div>
+					<ul>
+						<li v-for="item in 2">
+							<a href="">
+								<div class="lb">
+									<div>南京西路</div>
+								</div>
+								<div class="num">
+									<div>
+										交易笔数
+										<span>312</span>
+									</div>
+									<div>
+										总交易金额
+										<span>￥0.00</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.home{
+		height: 100%;
+		box-sizing: border-box;
+		padding-top: 90px;
+		background: url(../../static/img/index/top.png) left top no-repeat;
+		background-size: 100%;
+		position: relative;
+	}
+	header{
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	header div{
+		padding: 20px;
+		position: relative;
+	}
+	header a{
+		width: 50px;
+		height: 50px;
+		font-size: 0;
+		background: url(../../static/img/index/search_icon.png) center center no-repeat;
+		background-size: 20px;
+		position: absolute;
+		left: 10px;
+		top: 15px;
+	}
+	header h1{
+		text-align: center;
+		font-size: 1.8rem;
+		color: #F9F9F9;
+		padding: 7px 0;
+		background: url(../../static/img/index/line_title.png) bottom center no-repeat;
+		background-size: auto 2px;
+	}
+	.content{
+		height: 100%;
+		overflow-y: scroll;
+	}
+	.count{
+		padding: 0 30px;
+	}
+	.circle::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.circle li{
+		width: 50%;
+		box-sizing: border-box;
+		padding: 0 10px;
+		float: left;
+	}
+	.circle li .box{
+		padding-top: 100%;
+		box-sizing: border-box;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+	.circle li:first-child .box{
+		background-image: url(../../static/img/index/street_circle.png);
+	}
+	.circle li:nth-child(2) .box{
+		background-image: url(../../static/img/index/commerce_circle.png);
+	}
+	.circle li .box div{
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		font-size: 1.3rem;
+		color: #fff;
+		padding-top: 18%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.circle li .box span{
+		display: block;
+		line-height: 50px;
+		font-weight: bold;
+		font-size: 5rem;
+		color: #FFFFFF;
+		padding-top: 4%;
+	}
+	.other{
+		color: #fff;
+		background: url(../../static/img/index/bac-count.png) left bottom no-repeat;
+		background-size: 100%;
+		padding: 20px 20px 50px 25px;
+	}
+	.other span{
+		display: inline-block;
+		font-size: 1.2rem;
+		color: #D8D8D8;
+		background-repeat: no-repeat;
+		background-position: left center;
+	}
+	.other .num{
+		font-size: 1.8rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.other .total{
+		width: 60px;
+		border-right: 2px solid #f7f7f7;
+		float: left;
+	}
+	.other .total .num{
+		line-height: 26px;
+		font-size: 2.6rem;
+	}
+	.totalList{
+		padding-left: 62px;
+	}
+	.totalList::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.totalList > div{
+		width: 33.3%;
+		text-align: center;
+		float: left;
+	}
+	.other .total span{
+		background-image: url(../../static/img/index/icon-money.png);
+		background-size: 9px;
+		padding-left: 12px;
+	}
+	.other .xx{
+		background-image: url(../../static/img/index/icon-xx.png);
+		background-size: 22px;
+		padding-left: 25px;
+	}
+	.other .ewm{
+		background-image: url(../../static/img/index/icon-ewm.png);
+		background-size: 15px;
+		padding-left: 18px;
+	}
+	.other .nfc{
+		background-image: url(../../static/img/index/icon-nfc.png);
+		background-size: 15px;
+		padding-left: 18px;
+	}
+	.statistics{
+		padding-bottom: 80px;
+		padding-left: 5px;
+		box-sizing: border-box;
+		background: url(../../static/img/index/bac-bottom.png) left bottom no-repeat;
+		background-size: 100%;
+	}
+	.statistics > div{
+		margin-top: 15px;
+	}
+	.statistics .title{
+		padding: 0 15px;
+		margin-bottom: 8px;
+	}
+	.statistics .title h2{
+		display: inline-block;
+		font-size: 1.8rem;
+		color: #C6C6C6;
+	}
+	.statistics .title a{
+		font-size: 1.2rem;
+		color: #fff;
+		padding-right: 18px;
+		background: url(../../static/img/index/icon-more.png) right center no-repeat;
+		background-size: 15px;
+		margin-top: 6px;
+		float: right;
+	}
+	.statistics .title a:hover{
+		color: #C6C6C6;
+	}
+	.statistics ul{
+		white-space: nowrap;
+		overflow-x: scroll;
+	}
+	.statistics .zx li{
+		display: inline-block;
+		width: 68%;
+		border: 1px solid #3B3B4A;
+		padding: 3px;
+		border-radius: 5px;
+		margin-left: 15px;
+		box-shadow: 0 0 1px 0 #000;
+	}
+	.statistics .zx li::before{
+		content: '';
+		display: block;
+		height: 8px;
+		border-radius: 3px;
+		background: #89E4A1;
+	}
+	.statistics .zx li::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.statistics .zx li a{
+		display: block;
+		padding: 5px 10px;
+	}
+	.statistics .lb{
+		width: 40%;
+		font-size: 1.8rem;
+		color: #C6C6C6;
+		float: left;
+	}
+	.statistics .lb div{
+		line-height: 30px;
+		border-bottom: 1px dashed #C6C6C6;
+	}
+	.statistics .lb::after{
+		content: '';
+		display: block;
+		width: 65px;
+		height: 50px;
+		background: url(../../static/img/index/icon-zx-1.png) no-repeat;
+		background-size: 100%;
+		margin-top: 10px;
+	}
+	.statistics .num{
+		font-size: 1.2rem;
+		color: #C6C6C6;
+		float: right;
+	}
+	.statistics .num span{
+		display: block;
+		font-size: 2rem;
+		color: #F9F9F9;
+	}
+	.statistics .num > div:first-child{
+		margin-bottom: 8px;
+	}
+	.statistics .seller li::before{
+		background: #E54442;
+	}
+	.statistics .seller .lb::after{
+		background-image: url(../../static/img/index/icon-zx-2.png);
+	}
+	.branch li{
+		display: inline-block;
+		width: 120px;
+		padding: 3px;
+		border: 1px solid #3B3B4A;
+		border-radius: 5px;
+		margin-left: 15px;
+	}
+	.branch .t{
+		line-height: 30px;
+		text-align: center;
+		font-size: 1.6rem;
+		color: #2F2E3B;
+		background: #86E6E6;
+		border-radius: 5px;
+	}
+	.branch .c{
+		font-size: 0;
+		padding: 12px 0;
+	}
+	.branch .c div{
+		display: inline-block;
+		width: 50%;
+		text-align: center;
+		font-size: 1.2rem;
+		color: #C6C6C6;
+	}
+	.branch .c span{
+		display: block;
+		font-size: 2rem;
+		color: #F9F9F9;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.branch .c div:first-child{
+		box-sizing: border-box;
+		border-right: 1px dashed #fff;
+	}
+</style>
