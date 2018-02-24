@@ -1,19 +1,27 @@
 <template>
-  <div id="app" class="container">
-    <div>
-        <router-view/>
-        <v-footer></v-footer>
-    </div>
+  <div id="app">
+    <router-view/>
+    <v-footer></v-footer>
   </div>
 </template>
 
 <script>
-import FooterView from './components/footer/footer';
+import footer from "@/components/footer"
 export default {
-  name: 'app',
-  components:{
-    "v-footer" : FooterView
+  name: 'App',
+  components: {
+  	'v-footer': footer
   }
 }
 </script>
 
+<style>
+	html,body,#app{
+		height: 100%;
+	}
+	#app{
+		background: #4A4A5A;;
+		max-width: 640px;
+		margin: 0 auto;
+	}
+</style>
