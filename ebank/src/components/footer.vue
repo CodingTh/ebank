@@ -3,7 +3,7 @@
 		<div>
 			<ul>
 				<li v-for="(item, index) in nav">
-					<a href="" :style="{'background-image':'url(./static/img/footer/'+ item.icon + (active == index ? '-active' : '') +'.png)'}" v-text="item.text">首页</a>
+					<a :href="item.link" :style="{'background-image':'url(./static/img/footer/'+ item.icon + (active == index ? '-active' : '') +'.png)'}" v-text="item.text">首页</a>
 				</li>
 			</ul>
 		</div>
@@ -18,19 +18,23 @@
 				nav: [
 					{
 						icon: "home",
-						text: "首页"
+						text: "首页",
+						link:"#/home"
 					},
 					{
 						icon: "deal",
-						text: "交易"
+						text: "交易",
+						link:"#/trade"
 					},
 					{
 						icon: "analyze",
-						text: "人流洞察"
+						text: "人流洞察",
+						link:"#/report"
 					},
 					{
 						icon: "personage",
-						text: "我的"
+						text: "我的",
+						link:"#/user"
 					}
 				],
 				active: 0
