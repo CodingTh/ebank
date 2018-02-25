@@ -31,14 +31,8 @@ export default new Router({
 			component: user
 		},
 		{
-	      path: '/',
-	      name: 'home',
-	      component: home
-	    }
-    /*,
-		{
 			path: "*",
 			redirect: "/home"
-		}*/
+		}
 	]
 })
